@@ -47,6 +47,7 @@ header{background:#fffaf0;padding:15px 20px;text-align:center;border-bottom:1px 
 .required{color:#b34b37}
 .help{color:#806d55;font-size:13px;margin-top:5px}
 .query-box{background:#f7f0e3;border-radius:10px;padding:15px;margin:12px 0 20px}
+.query-box p{margin:6px 0}
 .query-link{display:inline-block;color:#78572e;font-weight:bold;text-decoration:underline}
 .primary-btn,.secondary-btn{display:block;width:100%;padding:14px 12px;border:0;border-radius:10px;font-family:inherit;font-size:17px;font-weight:bold;text-align:center;text-decoration:none;cursor:pointer}
 .primary-btn{background:#98713b;color:white}
@@ -63,7 +64,6 @@ footer{text-align:center;background:#e9ddc8;color:#765b38;padding:30px 15px}
 </style>
 </head>
 <body>
-
 <header>地藏禪寺・千日千句共修</header>
 
 <section class="hero">
@@ -127,14 +127,17 @@ footer{text-align:center;background:#e9ddc8;color:#765b38;padding:30px 15px}
 <label for="name">持誦者姓名 <span class="required">*</span></label>
 <input id="name" name="name" type="text" placeholder="請輸入持誦者姓名" required maxlength="40">
 </div>
+
 <div class="form-group">
 <label for="region">區域 <span class="required">*</span></label>
 <input id="region" name="region" type="text" placeholder="例如：台灣高雄、台灣台北、海外地區" required maxlength="60">
 </div>
+
 <div class="form-group">
 <label for="startDate">開始持誦日期 <span class="required">*</span></label>
 <input id="startDate" name="startDate" type="date" required>
 </div>
+
 <div class="form-group">
 <label for="attempt">本次為第幾次報名 <span class="required">*</span></label>
 <select id="attempt" name="attempt" required>
@@ -151,16 +154,25 @@ footer{text-align:center;background:#e9ddc8;color:#765b38;padding:30px 15px}
 <option value="第10次">第10次</option>
 </select>
 </div>
+
 <div class="form-group" id="previousNumberGroup" hidden>
 <label for="previousNumber">前次圓滿編號 <span class="required">*</span></label>
 <input id="previousNumber" name="previousNumber" type="text" placeholder="請填寫前次圓滿編號" maxlength="60">
 <div class="help">第二次以後報名，必須填寫前次圓滿編號。</div>
+
 <div class="query-box">
 <strong>忘記前次圓滿編號嗎？</strong>
 <p>請先前往佛菩薩護國佑民聊天室查詢，確認編號後再回來填寫。</p>
-<a class="query-link" href="https://lin.ee/N3BiGbE" target="_blank" rel="noopener">前往聊天室查詢編號 →</a>
+<a class="query-link" href="https://lin.ee/N3BiGbE" target="_blank" rel="noopener">前往聊天室查詢圓滿編號 →</a>
+</div>
+
+<div class="query-box">
+<strong>忘記前次福卡編號嗎？</strong>
+<p>請前往佛菩薩護國佑民聊天室查詢，確認福卡編號後再回來填寫。</p>
+<a class="query-link" href="https://lin.ee/N3BiGbE" target="_blank" rel="noopener">前往聊天室查詢福卡編號 →</a>
 </div>
 </div>
+
 <button class="primary-btn" type="submit">確認報名資料</button>
 </form>
 
@@ -188,10 +200,14 @@ footer{text-align:center;background:#e9ddc8;color:#765b38;padding:30px 15px}
 
 <section class="section" id="rules">
 <h2>🌿 修持須知</h2>
-<h3>每日持誦</h3><p>每日親自持誦「南無地藏菩薩」聖號1,000句。</p>
-<h3>每日完成時間</h3><p>每日晚上12點以前完成1,000句。若超過晚上12點才完成，則重新從第1天開始計算。</p>
-<h3>本人親自持誦</h3><p>不可代念，必須由持誦者本人親自恭念。</p>
-<h3>中斷後重新開始</h3><p>不需要重新報名，也不需要重新取得編號。請至聊天室留言提供原本的千日千句編號及重新開始持誦日期。</p>
+<h3>每日持誦</h3>
+<p>每日親自持誦「南無地藏菩薩」聖號1,000句。</p>
+<h3>每日完成時間</h3>
+<p>每日晚上12點以前完成1,000句。若超過晚上12點才完成，則重新從第1天開始計算。</p>
+<h3>本人親自持誦</h3>
+<p>不可代念，必須由持誦者本人親自恭念。</p>
+<h3>中斷後重新開始</h3>
+<p>不需要重新報名，也不需要重新取得編號。請至聊天室留言提供原本的千日千句編號及重新開始持誦日期。</p>
 </section>
 
 <section class="section" id="completion">
@@ -232,7 +248,6 @@ footer{text-align:center;background:#e9ddc8;color:#765b38;padding:30px 15px}
 
 <script>
 const LIFF_ID = "2012791212-4xvDfDQl";
-
 const lineStatus = document.getElementById("lineStatus");
 const attemptSelect = document.getElementById("attempt");
 const previousGroup = document.getElementById("previousNumberGroup");
@@ -260,19 +275,18 @@ async function initializeLiff() {
     await liff.init({ liffId: LIFF_ID });
 
     if (!liff.isInClient()) {
-      updateLineStatus("目前不是從 LINE 聊天室開啟。請從 XFL Demo 官方帳號聊天室點擊 LIFF 網址。");
+      updateLineStatus("目前不是從 LINE 聊天室開啟。請從地藏禪寺官方帳號聊天室點擊 LIFF 網址。");
       return;
     }
 
     const context = liff.getContext();
-
     if (!context) {
       updateLineStatus("已開啟 LINE，但尚未取得聊天室資訊。請重新從官方帳號聊天室開啟。");
       return;
     }
 
     if (context.type !== "utou") {
-      updateLineStatus("目前不是一對一聊天室。請從 XFL Demo 官方帳號的一對一聊天室開啟本頁。");
+      updateLineStatus("目前不是一對一聊天室。請從地藏禪寺官方帳號的一對一聊天室開啟本頁。");
       return;
     }
 
@@ -298,7 +312,9 @@ attemptSelect.addEventListener("change", function() {
   const needsPrevious = this.value !== "" && this.value !== "第1次";
   previousGroup.hidden = !needsPrevious;
   previousInput.required = needsPrevious;
+
   if (!needsPrevious) previousInput.value = "";
+
   resultBox.style.display = "none";
   sendStatus.textContent = "";
 });
@@ -330,7 +346,7 @@ registrationForm.addEventListener("submit", function(event) {
   }
 
   if (attempt !== "第1次" && !previousNumber) {
-    alert("第二次以後報名，請填寫前次圓滿編號。若忘記編號，請先前往聊天室查詢。");
+    alert("第二次以後報名，請填寫前次圓滿編號。若忘記編號，請先前往佛菩薩護國佑民聊天室查詢。");
     previousInput.focus();
     return;
   }
@@ -347,7 +363,6 @@ registrationForm.addEventListener("submit", function(event) {
 `當家師父吉祥：
 
 弟子要報名千日千句，祈請師長賜予弟子千日千句編號，感恩當家師父。
-
 🔹持誦者：${name}
 🔹區域：${region}
 🔹開始持誦日期：
@@ -366,7 +381,7 @@ ${previousLine}
 
 sendButton.addEventListener("click", async function() {
   if (!liffReady || !sendMessagesAvailable) {
-    sendStatus.textContent = "目前無法直接傳送。請從 XFL Demo 聊天室重新開啟本頁。";
+    sendStatus.textContent = "目前無法直接傳送。請從地藏禪寺聊天室重新開啟本頁。";
     return;
   }
 
