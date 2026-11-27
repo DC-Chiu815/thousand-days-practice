@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
@@ -7,333 +7,227 @@
 <meta name="theme-color" content="#f5eddf">
 <title>千日千句｜南無地藏菩薩</title>
 <meta name="description" content="千日千句，天天發心、日日精進。每日持誦南無地藏菩薩一千句，連續一千天。">
-
 <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
-
 <style>
-:root {
-  --gold:#a77b39;
-  --deep:#604426;
-  --cream:#faf6ed;
-  --paper:#fffdf8;
-  --brown:#806044;
-}
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body {
-  margin:0;
-  font-family:"Noto Serif TC","Microsoft JhengHei",serif;
-  color:#493a2a;
-  background:var(--cream);
-  line-height:1.9;
-}
-header {
-  background:#fffaf0;
-  padding:15px 20px;
-  text-align:center;
-  border-bottom:1px solid #e8d9bd;
-  color:var(--deep);
-  letter-spacing:3px;
-  font-size:19px;
-  font-weight:bold;
-}
-.hero {
-  min-height:420px;
-  padding:65px 20px;
-  text-align:center;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  background:radial-gradient(ellipse at center,#fff8e7 0%,#eddfc4 65%,#d8c19a 100%);
-}
-.hero .symbol { font-size:65px; color:var(--gold); margin-bottom:8px; }
-.hero h1 {
-  font-size:clamp(38px,8vw,58px);
-  color:#78572e;
-  letter-spacing:10px;
-  margin:5px 0;
-}
-.hero h2 { font-size:21px; color:#997544; letter-spacing:5px; font-weight:normal; }
-.hero p { margin:18px 0 0; color:#806044; }
-.hero .lotus { font-size:34px; margin-top:20px; }
-.container { max-width:900px; margin:auto; padding:35px 18px; }
-.section {
-  background:var(--paper);
-  border:1px solid #eadfc9;
-  border-radius:15px;
-  padding:25px;
-  margin-bottom:24px;
-  box-shadow:0 4px 15px rgba(100,70,30,.04);
-  scroll-margin-top:20px;
-}
-.section h2 { color:var(--gold); text-align:center; font-size:24px; margin:0 0 18px; }
-.section h3 { color:var(--deep); font-size:19px; }
-.quote { background:#f7f0e3; border-left:4px solid var(--gold); padding:18px; color:#604a30; font-size:18px; }
-.intro { text-align:center; font-size:17px; }
-.master { text-align:center; background:#f6efe1; border-radius:12px; padding:20px; }
-.master strong { display:block; color:#85612f; font-size:22px; }
-.feature-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
-.feature {
-  display:block; text-decoration:none; background:#f8f2e7;
-  border:1px solid #e9dcc4; border-radius:12px;
-  padding:19px 10px; text-align:center; color:#684d2d; transition:.2s;
-}
-.feature:active { background:#eee1ca; }
-.feature .icon { font-size:29px; display:block; }
-.feature strong { display:block; font-size:17px; }
-.feature small { color:#8d795e; }
-.rounds { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; }
-.round { background:#f8f1e5; border:1px solid #e5d5b9; border-radius:12px; text-align:center; padding:20px 8px; }
-.round strong { color:#8a652e; display:block; }
-.round span { font-size:14px; color:#806d55; }
-.note { color:#806d55; font-size:14px; }
-.form-intro { background:#f7f0e3; padding:15px; border-radius:10px; margin-bottom:20px; }
-.form-group { margin-bottom:18px; }
-.form-group label { display:block; color:#604426; font-weight:bold; margin-bottom:7px; }
-.form-group input,.form-group select {
-  width:100%; min-height:48px; padding:10px 12px;
-  border:1px solid #d9c7a8; border-radius:9px;
-  background:#fffefa; color:#493a2a; font-size:16px; font-family:inherit;
-}
-.form-group input:focus,.form-group select:focus { outline:2px solid #c5a36c; border-color:#a77b39; }
-.required { color:#b34b37; }
-.help { color:#806d55; font-size:13px; margin-top:5px; }
-.query-box { background:#f7f0e3; border-radius:10px; padding:15px; margin:12px 0 20px; }
-.query-link { display:inline-block; color:#78572e; font-weight:bold; text-decoration:underline; }
-.primary-btn,.secondary-btn {
-  display:block; width:100%; padding:14px 12px;
-  border:0; border-radius:10px; font-family:inherit;
-  font-size:17px; font-weight:bold; text-align:center;
-  text-decoration:none; cursor:pointer;
-}
-.primary-btn { background:#98713b; color:white; }
-.secondary-btn { background:#eee3d0; color:#684d2d; margin-top:10px; }
-.primary-btn:active,.secondary-btn:active { opacity:.8; }
-.primary-btn:disabled { opacity:.5; cursor:not-allowed; }
-.result-box {
-  display:none; margin-top:20px; padding:16px;
-  background:#f5f0e6; border:1px solid #dfcfb2; border-radius:10px;
-}
-.result-box textarea {
-  width:100%; min-height:290px; padding:12px;
-  border:1px solid #d9c7a8; border-radius:8px;
-  font-family:inherit; font-size:15px; line-height:1.8;
-  color:#493a2a; background:#fffefa; resize:vertical;
-}
-.status { color:#527044; font-weight:bold; margin:10px 0; }
-.line-status {
-  background:#f7f0e3; border-radius:10px;
-  padding:12px; margin:12px 0; font-size:14px;
-}
-footer { text-align:center; background:#e9ddc8; color:#765b38; padding:30px 15px; }
-@media(min-width:650px) { .feature-grid { grid-template-columns:repeat(3,1fr); } }
-@media(max-width:380px) { .hero h1 { letter-spacing:5px; } .section { padding:19px; } }
+:root{--gold:#a77b39;--deep:#604426;--cream:#faf6ed;--paper:#fffdf8;--brown:#806044}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:"Noto Serif TC","Microsoft JhengHei",serif;color:#493a2a;background:var(--cream);line-height:1.9}
+header{background:#fffaf0;padding:15px 20px;text-align:center;border-bottom:1px solid #e8d9bd;color:var(--deep);letter-spacing:3px;font-size:19px;font-weight:bold}
+.hero{min-height:420px;padding:65px 20px;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center;background:radial-gradient(ellipse at center,#fff8e7 0%,#eddfc4 65%,#d8c19a 100%)}
+.hero .symbol{font-size:65px;color:var(--gold);margin-bottom:8px}
+.hero h1{font-size:clamp(38px,8vw,58px);color:#78572e;letter-spacing:10px;margin:5px 0}
+.hero h2{font-size:21px;color:#997544;letter-spacing:5px;font-weight:normal}
+.hero p{margin:18px 0 0;color:#806044}
+.hero .lotus{font-size:34px;margin-top:20px}
+.container{max-width:900px;margin:auto;padding:35px 18px}
+.section{background:var(--paper);border:1px solid #eadfc9;border-radius:15px;padding:25px;margin-bottom:24px;box-shadow:0 4px 15px rgba(100,70,30,.04);scroll-margin-top:20px}
+.section h2{color:var(--gold);text-align:center;font-size:24px;margin:0 0 18px}
+.section h3{color:var(--deep);font-size:19px}
+.quote{background:#f7f0e3;border-left:4px solid var(--gold);padding:18px;color:#604a30;font-size:18px}
+.intro{text-align:center;font-size:17px}
+.master{text-align:center;background:#f6efe1;border-radius:12px;padding:20px}
+.master strong{display:block;color:#85612f;font-size:22px}
+.feature-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.feature{display:block;text-decoration:none;background:#f8f2e7;border:1px solid #e9dcc4;border-radius:12px;padding:19px 10px;text-align:center;color:#684d2d;transition:.2s}
+.feature:active{background:#eee1ca}
+.feature .icon{font-size:29px;display:block}
+.feature strong{display:block;font-size:17px}
+.feature small{color:#8d795e}
+.rounds{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.round{background:#f8f1e5;border:1px solid #e5d5b9;border-radius:12px;text-align:center;padding:20px 8px}
+.round strong{color:#8a652e;display:block}
+.round span{font-size:14px;color:#806d55}
+.note{color:#806d55;font-size:14px}
+.form-intro{background:#f7f0e3;padding:15px;border-radius:10px;margin-bottom:20px}
+.form-group{margin-bottom:18px}
+.form-group label{display:block;color:#604426;font-weight:bold;margin-bottom:7px}
+.form-group input,.form-group select{width:100%;min-height:48px;padding:10px 12px;border:1px solid #d9c7a8;border-radius:9px;background:#fffefa;color:#493a2a;font-size:16px;font-family:inherit}
+.form-group input:focus,.form-group select:focus{outline:2px solid #c5a36c;border-color:#a77b39}
+.required{color:#b34b37}
+.help{color:#806d55;font-size:13px;margin-top:5px}
+.query-box{background:#f7f0e3;border-radius:10px;padding:15px;margin:12px 0 20px}
+.query-link{display:inline-block;color:#78572e;font-weight:bold;text-decoration:underline}
+.primary-btn,.secondary-btn{display:block;width:100%;padding:14px 12px;border:0;border-radius:10px;font-family:inherit;font-size:17px;font-weight:bold;text-align:center;text-decoration:none;cursor:pointer}
+.primary-btn{background:#98713b;color:white}
+.secondary-btn{background:#eee3d0;color:#684d2d;margin-top:10px}
+.primary-btn:active,.secondary-btn:active{opacity:.8}
+.primary-btn:disabled{opacity:.5;cursor:not-allowed}
+.result-box{display:none;margin-top:20px;padding:16px;background:#f5f0e6;border:1px solid #dfcfb2;border-radius:10px}
+.result-box textarea{width:100%;min-height:290px;padding:12px;border:1px solid #d9c7a8;border-radius:8px;font-family:inherit;font-size:15px;line-height:1.8;color:#493a2a;background:#fffefa;resize:vertical}
+.status{color:#527044;font-weight:bold;margin:10px 0;white-space:pre-wrap;overflow-wrap:anywhere}
+.line-status{background:#f7f0e3;border-radius:10px;padding:12px;margin:12px 0;font-size:14px;overflow-wrap:anywhere}
+footer{text-align:center;background:#e9ddc8;color:#765b38;padding:30px 15px}
+@media(min-width:650px){.feature-grid{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:380px){.hero h1{letter-spacing:5px}.section{padding:19px}}
 </style>
 </head>
-
 <body>
 
 <header>地藏禪寺・千日千句共修</header>
 
 <section class="hero">
-  <div class="symbol">☸</div>
-  <h1>千日千句</h1>
-  <h2>南無地藏菩薩</h2>
-  <p>天天發心・日日精進・千日不退</p>
-  <div class="lotus">🙏　蓮花清淨　🙏</div>
+<div class="symbol">☸</div>
+<h1>千日千句</h1>
+<h2>南無地藏菩薩</h2>
+<p>天天發心・日日精進・千日不退</p>
+<div class="lotus">🙏　蓮花清淨　🙏</div>
 </section>
 
 <main class="container">
 
 <section class="section">
-  <h2>🌿 千日千句共修</h2>
-  <div class="intro">
-    每日虔誠持誦「南無地藏菩薩」聖號一千句，
-    連續一千天，培養長遠精進的修持心。
-    <h3>每日持誦 1,000 句</h3>
-    天天發願，日日精進，廣結地藏法緣。
-  </div>
+<h2>🌿 千日千句共修</h2>
+<div class="intro">
+每日虔誠持誦「南無地藏菩薩」聖號一千句，連續一千天，培養長遠精進的修持心。
+<h3>每日持誦 1,000 句</h3>
+天天發願，日日精進，廣結地藏法緣。
+</div>
 </section>
 
 <section class="section">
-  <h2>📖 經典依據</h2>
-  <p>《地藏菩薩本願經・見聞利益品第十二》云：</p>
-  <div class="quote">
-    「更能每日念菩薩名千遍，至於千日。<br>
-    是人當得菩薩遣所在土地鬼神，終身衛護。<br>
-    現世衣食豐溢，無諸疾苦，乃至橫事不入其門，何況及身。<br>
-    是人畢竟得菩薩摩頂授記。」
-  </div>
+<h2>📖 經典依據</h2>
+<p>《地藏菩薩本願經・見聞利益品第十二》云：</p>
+<div class="quote">
+「更能每日念菩薩名千遍，至於千日。<br>
+是人當得菩薩遣所在土地鬼神，終身衛護。<br>
+現世衣食豐溢，無諸疾苦，乃至橫事不入其門，何況及身。<br>
+是人畢竟得菩薩摩頂授記。」
+</div>
 </section>
 
 <section class="section" id="activity">
-  <h2>🌸 活動緣起</h2>
-  <div class="master">
-    <strong>當家師父領眾發願</strong>
-    民國106年1月1日開始，每日持誦
-    「南無地藏菩薩」聖號1,000句，
-    連續1,000天，目前已進入第四輪。
-  </div>
-  <p class="intro">法緣殊勝，敬邀全球同參道友共襄盛舉。</p>
+<h2>🌸 活動緣起</h2>
+<div class="master">
+<strong>當家師父領眾發願</strong>
+民國106年1月1日開始，每日持誦「南無地藏菩薩」聖號1,000句，連續1,000天，目前已進入第四輪。
+</div>
+<p class="intro">法緣殊勝，敬邀全球同參道友共襄盛舉。</p>
 </section>
 
 <section class="section">
-  <h2>🙏 共修六大功能</h2>
-  <div class="feature-grid">
-    <a class="feature" href="#activity"><span class="icon">📖</span><strong>活動緣起</strong><small>認識千日千句</small></a>
-    <a class="feature" href="#registration"><span class="icon">📝</span><strong>我要報名</strong><small>發願登記</small></a>
-    <a class="feature" href="#cards"><span class="icon">🎀</span><strong>平安福卡</strong><small>申請專屬福卡</small></a>
-    <a class="feature" href="#rules"><span class="icon">🌿</span><strong>修持須知</strong><small>了解活動規則</small></a>
-    <a class="feature" href="#completion"><span class="icon">🎉</span><strong>千日圓滿</strong><small>申請獎勵影片</small></a>
-    <a class="feature" href="#faq"><span class="icon">❓</span><strong>常見問答</strong><small>修持問題解答</small></a>
-  </div>
+<h2>🙏 共修六大功能</h2>
+<div class="feature-grid">
+<a class="feature" href="#activity"><span class="icon">📖</span><strong>活動緣起</strong><small>認識千日千句</small></a>
+<a class="feature" href="#registration"><span class="icon">📝</span><strong>我要報名</strong><small>發願登記</small></a>
+<a class="feature" href="#cards"><span class="icon">🎀</span><strong>平安福卡</strong><small>申請專屬福卡</small></a>
+<a class="feature" href="#rules"><span class="icon">🌿</span><strong>修持須知</strong><small>了解活動規則</small></a>
+<a class="feature" href="#completion"><span class="icon">🎉</span><strong>千日圓滿</strong><small>申請獎勵影片</small></a>
+<a class="feature" href="#faq"><span class="icon">❓</span><strong>常見問答</strong><small>修持問題解答</small></a>
+</div>
 </section>
 
 <section class="section" id="registration">
-  <h2>📝 千日千句報名</h2>
+<h2>📝 千日千句報名</h2>
+<div class="form-intro">歡迎發心參加千日千句共修。請依照實際資料填寫，完成後可直接透過 LINE 傳送報名留言。</div>
+<div class="line-status" id="lineStatus" aria-live="polite">正在確認 LINE 連線狀態……</div>
 
-  <div class="form-intro">
-    歡迎發心參加千日千句共修。請依照實際資料填寫，
-    完成後可直接透過 LINE 傳送報名留言。
-  </div>
+<form id="registrationForm">
+<div class="form-group">
+<label for="name">持誦者姓名 <span class="required">*</span></label>
+<input id="name" name="name" type="text" placeholder="請輸入持誦者姓名" required maxlength="40">
+</div>
+<div class="form-group">
+<label for="region">區域 <span class="required">*</span></label>
+<input id="region" name="region" type="text" placeholder="例如：台灣高雄、台灣台北、海外地區" required maxlength="60">
+</div>
+<div class="form-group">
+<label for="startDate">開始持誦日期 <span class="required">*</span></label>
+<input id="startDate" name="startDate" type="date" required>
+</div>
+<div class="form-group">
+<label for="attempt">本次為第幾次報名 <span class="required">*</span></label>
+<select id="attempt" name="attempt" required>
+<option value="">請選擇報名次數</option>
+<option value="第1次">第1次</option>
+<option value="第2次">第2次</option>
+<option value="第3次">第3次</option>
+<option value="第4次">第4次</option>
+<option value="第5次">第5次</option>
+<option value="第6次">第6次</option>
+<option value="第7次">第7次</option>
+<option value="第8次">第8次</option>
+<option value="第9次">第9次</option>
+<option value="第10次">第10次</option>
+</select>
+</div>
+<div class="form-group" id="previousNumberGroup" hidden>
+<label for="previousNumber">前次圓滿編號 <span class="required">*</span></label>
+<input id="previousNumber" name="previousNumber" type="text" placeholder="請填寫前次圓滿編號" maxlength="60">
+<div class="help">第二次以後報名，必須填寫前次圓滿編號。</div>
+<div class="query-box">
+<strong>忘記前次圓滿編號嗎？</strong>
+<p>請先前往佛菩薩護國佑民聊天室查詢，確認編號後再回來填寫。</p>
+<a class="query-link" href="https://lin.ee/N3BiGbE" target="_blank" rel="noopener">前往聊天室查詢編號 →</a>
+</div>
+</div>
+<button class="primary-btn" type="submit">確認報名資料</button>
+</form>
 
-  <div class="line-status" id="lineStatus" aria-live="polite">
-    正在確認 LINE 連線狀態……
-  </div>
-
-  <form id="registrationForm">
-    <div class="form-group">
-      <label for="name">持誦者姓名 <span class="required">*</span></label>
-      <input id="name" name="name" type="text" placeholder="請輸入持誦者姓名" required maxlength="40">
-    </div>
-
-    <div class="form-group">
-      <label for="region">區域 <span class="required">*</span></label>
-      <input id="region" name="region" type="text" placeholder="例如：台灣高雄、台灣台北、海外地區" required maxlength="60">
-    </div>
-
-    <div class="form-group">
-      <label for="startDate">開始持誦日期 <span class="required">*</span></label>
-      <input id="startDate" name="startDate" type="date" required>
-    </div>
-
-    <div class="form-group">
-      <label for="attempt">本次為第幾次報名 <span class="required">*</span></label>
-      <select id="attempt" name="attempt" required>
-        <option value="">請選擇報名次數</option>
-        <option value="第1次">第1次</option>
-        <option value="第2次">第2次</option>
-        <option value="第3次">第3次</option>
-        <option value="第4次">第4次</option>
-        <option value="第5次">第5次</option>
-        <option value="第6次">第6次</option>
-        <option value="第7次">第7次</option>
-        <option value="第8次">第8次</option>
-        <option value="第9次">第9次</option>
-        <option value="第10次">第10次</option>
-      </select>
-    </div>
-
-    <div class="form-group" id="previousNumberGroup" hidden>
-      <label for="previousNumber">前次圓滿編號 <span class="required">*</span></label>
-      <input id="previousNumber" name="previousNumber" type="text" placeholder="請填寫前次圓滿編號" maxlength="60">
-      <div class="help">第二次以後報名，必須填寫前次圓滿編號。</div>
-      <div class="query-box">
-        <strong>忘記前次圓滿編號嗎？</strong>
-        <p>請先前往佛菩薩護國佑民聊天室查詢，確認編號後再回來填寫。</p>
-        <a class="query-link" href="https://lin.ee/N3BiGbE" target="_blank" rel="noopener">前往聊天室查詢編號 →</a>
-      </div>
-    </div>
-
-    <button class="primary-btn" type="submit">確認報名資料</button>
-  </form>
-
-  <div class="result-box" id="resultBox">
-    <h3>🙏 請確認報名留言</h3>
-    <p class="note">請確認姓名、日期及編號正確，再按下直接送出報名。</p>
-    <textarea id="messageText" readonly></textarea>
-
-    <button class="primary-btn" type="button" id="sendButton" disabled>
-      📩 直接送出報名至 LINE
-    </button>
-
-    <div class="status" id="sendStatus" aria-live="polite"></div>
-
-    <button class="secondary-btn" type="button" id="copyButton">
-      📋 複製完整報名留言（備用）
-    </button>
-
-    <p class="note">
-      若 LINE 直接傳送功能無法使用，可使用備用複製方式。
-      報名資料送出後，由當家師父人工處理及核發編號。
-    </p>
-  </div>
+<div class="result-box" id="resultBox">
+<h3>🙏 請確認報名留言</h3>
+<p class="note">請確認姓名、日期及編號正確，再按下直接送出報名。</p>
+<textarea id="messageText" readonly></textarea>
+<button class="primary-btn" type="button" id="sendButton" disabled>📩 直接送出報名至 LINE</button>
+<div class="status" id="sendStatus" aria-live="polite"></div>
+<button class="secondary-btn" type="button" id="copyButton">📋 複製完整報名留言（備用）</button>
+<p class="note">若 LINE 直接傳送功能無法使用，可使用備用複製方式。報名資料送出後，由當家師父人工處理及核發編號。</p>
+</div>
 </section>
 
 <section class="section" id="cards">
-  <h2>🎀 四輪專屬平安福卡</h2>
-  <div class="rounds">
-    <div class="round"><strong>第一輪</strong><span>菩薩護佑 A</span></div>
-    <div class="round"><strong>第二輪</strong><span>菩薩護佑 B</span></div>
-    <div class="round"><strong>第三輪</strong><span>龍華三會 A</span></div>
-    <div class="round"><strong>第四輪</strong><span>佛國淨土</span></div>
-  </div>
-  <p class="note">福卡申請功能後續再逐步開放。</p>
+<h2>🎀 四輪專屬平安福卡</h2>
+<div class="rounds">
+<div class="round"><strong>第一輪</strong><span>菩薩護佑 A</span></div>
+<div class="round"><strong>第二輪</strong><span>菩薩護佑 B</span></div>
+<div class="round"><strong>第三輪</strong><span>龍華三會 A</span></div>
+<div class="round"><strong>第四輪</strong><span>佛國淨土</span></div>
+</div>
+<p class="note">福卡申請功能後續再逐步開放。</p>
 </section>
 
 <section class="section" id="rules">
-  <h2>🌿 修持須知</h2>
-  <h3>每日持誦</h3>
-  <p>每日親自持誦「南無地藏菩薩」聖號1,000句。</p>
-  <h3>每日完成時間</h3>
-  <p>每日晚上12點以前完成1,000句。若超過晚上12點才完成，則重新從第1天開始計算。</p>
-  <h3>本人親自持誦</h3>
-  <p>不可代念，必須由持誦者本人親自恭念。</p>
-  <h3>中斷後重新開始</h3>
-  <p>不需要重新報名，也不需要重新取得編號。請至聊天室留言提供原本的千日千句編號及重新開始持誦日期。</p>
+<h2>🌿 修持須知</h2>
+<h3>每日持誦</h3><p>每日親自持誦「南無地藏菩薩」聖號1,000句。</p>
+<h3>每日完成時間</h3><p>每日晚上12點以前完成1,000句。若超過晚上12點才完成，則重新從第1天開始計算。</p>
+<h3>本人親自持誦</h3><p>不可代念，必須由持誦者本人親自恭念。</p>
+<h3>中斷後重新開始</h3><p>不需要重新報名，也不需要重新取得編號。請至聊天室留言提供原本的千日千句編號及重新開始持誦日期。</p>
 </section>
 
 <section class="section" id="completion">
-  <h2>🎉 千日圓滿</h2>
-  <p class="intro">圓滿一千天後，可至佛光普照客服帳號，申請千日千句圓滿獎勵影片。</p>
-  <p style="text-align:center;">
-    <a class="query-link" href="http://line.me/ti/p/@029qdmxd" target="_blank" rel="noopener">前往佛光普照客服帳號申請 →</a>
-  </p>
+<h2>🎉 千日圓滿</h2>
+<p class="intro">圓滿一千天後，可至佛光普照客服帳號，申請千日千句圓滿獎勵影片。</p>
+<p style="text-align:center"><a class="query-link" href="http://line.me/ti/p/@029qdmxd" target="_blank" rel="noopener">前往佛光普照客服帳號申請 →</a></p>
 </section>
 
 <section class="section" id="faq">
-  <h2>❓ 常見問答</h2>
-  <h3>Q1：每天的1,000句，需要另外念來交給當家師父嗎？</h3>
-  <p>每天持誦的1,000句地藏菩薩聖號，可自行安排功課與迴向。若未迴向，也可廣結善緣，交給當家師父迴向。</p>
-  <h3>Q2：每天有時間限制嗎？</h3>
-  <p>有。每日晚上12點以前圓滿1,000句。若超過晚上12點才完成，則重新從第1天開始計算。</p>
-  <h3>Q3：可以替家人持誦嗎？</h3>
-  <p>不可以代念，必須由持誦者本人親自恭念。</p>
-  <h3>Q4：如何知道自己是否已經滿1,000天？</h3>
-  <p>建議自行記錄每日持誦進度，也可使用日期計算工具確認是否已達第1,000天。</p>
-  <h3>Q5：忘記自己有沒有報名，或忘記開始日期怎麼辦？</h3>
-  <p>可至佛菩薩護國佑民聊天室留言查詢。</p>
-  <h3>Q6：已經報名，但中途斷掉了，需要重新報名嗎？</h3>
-  <p>不需要重新報名，也不需要重新取得編號。請在聊天室留言提供原本的千日千句編號及重新開始持誦日期。</p>
+<h2>❓ 常見問答</h2>
+<h3>Q1：每天的1,000句，需要另外念來交給當家師父嗎？</h3>
+<p>每天持誦的1,000句地藏菩薩聖號，可自行安排功課與迴向。若未迴向，也可廣結善緣，交給當家師父迴向。</p>
+<h3>Q2：每天有時間限制嗎？</h3>
+<p>有。每日晚上12點以前圓滿1,000句。若超過晚上12點才完成，則重新從第1天開始計算。</p>
+<h3>Q3：可以替家人持誦嗎？</h3>
+<p>不可以代念，必須由持誦者本人親自恭念。</p>
+<h3>Q4：如何知道自己是否已經滿1,000天？</h3>
+<p>建議自行記錄每日持誦進度，也可使用日期計算工具確認是否已達第1,000天。</p>
+<h3>Q5：忘記自己有沒有報名，或忘記開始日期怎麼辦？</h3>
+<p>可至佛菩薩護國佑民聊天室留言查詢。</p>
+<h3>Q6：已經報名，但中途斷掉了，需要重新報名嗎？</h3>
+<p>不需要重新報名，也不需要重新取得編號。請在聊天室留言提供原本的千日千句編號及重新開始持誦日期。</p>
 </section>
 
 <section class="section">
-  <h2>💖 千日千句・修持精神</h2>
-  <p class="intro">
-    一千句，是每日的發心。<br>
-    一千天，是長遠的堅持。<br>
-    願我們以恭敬心持誦地藏菩薩聖號，日日不退，廣結善緣。
-  </p>
-  <h3 style="text-align:center;color:#a77b39">南無大願地藏王菩薩 🙏</h3>
+<h2>💖 千日千句・修持精神</h2>
+<p class="intro">一千句，是每日的發心。<br>一千天，是長遠的堅持。<br>願我們以恭敬心持誦地藏菩薩聖號，日日不退，廣結善緣。</p>
+<h3 style="text-align:center;color:#a77b39">南無大願地藏王菩薩 🙏</h3>
 </section>
 
 </main>
 
 <footer>
-  <div>千日千句・地藏菩薩聖號共修</div>
-  <div>天天發心・日日精進</div>
-  <div>願以此功德，普及於一切。</div>
+<div>千日千句・地藏菩薩聖號共修</div>
+<div>天天發心・日日精進</div>
+<div>願以此功德，普及於一切。</div>
 </footer>
 
 <script>
@@ -359,6 +253,10 @@ function updateLineStatus(message) {
 
 async function initializeLiff() {
   try {
+    if (typeof liff === "undefined") {
+      throw new Error("LINE LIFF SDK 載入失敗，請檢查網路或重新整理網頁。");
+    }
+
     await liff.init({ liffId: LIFF_ID });
 
     if (!liff.isInClient()) {
@@ -385,39 +283,37 @@ async function initializeLiff() {
       updateLineStatus("✓ LINE 連線成功，可以直接傳送報名留言。");
       sendButton.disabled = false;
     } else {
-      updateLineStatus("LINE 已開啟，但目前無法使用直接傳送功能。請確認 chat_message.write 權限。");
+      updateLineStatus("LINE 已開啟，但目前無法使用直接傳送功能。請確認 LIFF 權限設定。");
     }
-
   } catch (error) {
     console.error("LIFF 初始化錯誤：", error);
-    updateLineStatus("LINE 連線初始化失敗。請重新從官方帳號聊天室開啟本頁。");
+    const errorMessage = error && error.message ? error.message : String(error);
+    updateLineStatus("LINE 連線初始化失敗：" + errorMessage);
   }
 }
 
 initializeLiff();
 
-attemptSelect.addEventListener("change", function () {
+attemptSelect.addEventListener("change", function() {
   const needsPrevious = this.value !== "" && this.value !== "第1次";
   previousGroup.hidden = !needsPrevious;
   previousInput.required = needsPrevious;
-
   if (!needsPrevious) previousInput.value = "";
-
   resultBox.style.display = "none";
   sendStatus.textContent = "";
 });
 
-registrationForm.addEventListener("input", function () {
+registrationForm.addEventListener("input", function() {
   resultBox.style.display = "none";
   sendStatus.textContent = "";
 });
 
-registrationForm.addEventListener("change", function () {
+registrationForm.addEventListener("change", function() {
   resultBox.style.display = "none";
   sendStatus.textContent = "";
 });
 
-registrationForm.addEventListener("submit", function (event) {
+registrationForm.addEventListener("submit", function(event) {
   event.preventDefault();
 
   if (!registrationForm.reportValidity()) return;
@@ -465,12 +361,12 @@ ${previousLine}
   sendStatus.textContent = "";
   resultBox.style.display = "block";
   sendButton.disabled = !sendMessagesAvailable;
-  resultBox.scrollIntoView({ behavior:"smooth", block:"start" });
+  resultBox.scrollIntoView({behavior:"smooth",block:"start"});
 });
 
-sendButton.addEventListener("click", async function () {
+sendButton.addEventListener("click", async function() {
   if (!liffReady || !sendMessagesAvailable) {
-    sendStatus.textContent = "目前無法直接傳送。請從 XFL Demo 一對一聊天室重新開啟本頁。";
+    sendStatus.textContent = "目前無法直接傳送。請從 XFL Demo 聊天室重新開啟本頁。";
     return;
   }
 
@@ -483,23 +379,16 @@ sendButton.addEventListener("click", async function () {
   sendStatus.textContent = "正在傳送報名留言，請稍候……";
 
   try {
-    await liff.sendMessages([
-      {
-        type: "text",
-        text: messageText.value
-      }
-    ]);
-
+    await liff.sendMessages([{type:"text",text:messageText.value}]);
     sendStatus.textContent = "✓ 報名留言已成功傳送至目前開啟本頁的 LINE 聊天室。請確認聊天室中的訊息。";
-
   } catch (error) {
     console.error("LINE 傳送失敗：", error);
-    sendStatus.textContent = "傳送失敗。請重新從 XFL Demo 聊天室開啟本頁，或使用下方備用複製功能。";
+    sendStatus.textContent = "傳送失敗：" + (error && error.message ? error.message : String(error)) + "。請使用下方備用複製功能。";
     sendButton.disabled = false;
   }
 });
 
-copyButton.addEventListener("click", async function () {
+copyButton.addEventListener("click", async function() {
   try {
     await navigator.clipboard.writeText(messageText.value);
     sendStatus.textContent = "✓ 已複製完整報名留言。";
@@ -507,14 +396,9 @@ copyButton.addEventListener("click", async function () {
     messageText.focus();
     messageText.select();
     const copied = document.execCommand("copy");
-
-    sendStatus.textContent = copied
-      ? "✓ 已複製完整報名留言。"
-      : "請長按或全選上方留言，手動複製。";
+    sendStatus.textContent = copied ? "✓ 已複製完整報名留言。" : "請長按或全選上方留言，手動複製。";
   }
 });
 </script>
-
 </body>
 </html>
-```
